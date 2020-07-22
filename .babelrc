@@ -1,0 +1,13 @@
+// .babelrc or babel-loader option
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "style": true
+      }
+    ] // `style: true` for less or `style: css` for css
+  ]
+}
