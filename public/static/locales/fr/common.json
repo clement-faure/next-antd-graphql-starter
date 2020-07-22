@@ -1,0 +1,9 @@
+{
+  "change-locale": "Changer locale",
+  "error-with-status": "A {{statusCode}} error occurred on server",
+  "error-without-status": "An error occurred on the server",
+  "index": {
+    "head_title": "Accueil"
+  },
+  "footer": "Next Antd Graphql Starter"
+}
