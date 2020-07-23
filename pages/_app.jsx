@@ -12,6 +12,7 @@ import "~/styles/global.less";
 
 import NagsHeader from "~/components/layout/NagsHeader";
 import NagsFooter from "~/components/layout/NagsFooter";
+
 class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
