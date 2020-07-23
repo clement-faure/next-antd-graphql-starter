@@ -1,30 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Next Antd GraphQL Starter
 
-## Getting Started
+Next Antd GraphQL Starter is a simple environment for building modern JAMstack application.
 
-First, run the development server:
+[https://next-antd-graphql-starter.vercel.app/fr](https://next-antd-graphql-starter.vercel.app/fr)
+
+This starter is build on top of
+
+- [Next.js](https://nextjs.org/docs) - A React framework
+- [Ant Design](https://ant.design/) - A design system for enterprise-level products
+- [Apollo Server](https://www.apollographql.com/docs/apollo-server/) - Configure a production-ready GraphQL server to fetch and combine data from multiple sources.
+- [Apollo Client](https://www.apollographql.com/docs/react/) - Manage the entirety of your React app's state and seamlessly execute GraphQL operations.
+
+## Prerequisite
+
+Some dependencies are required globally
+
+- [Yarn](https://classic.yarnpkg.com/fr/docs/install/#mac-stable) - A package manager
+
+## Quick start
+
+First clone the repository
 
 ```bash
-npm run dev
-# or
-yarn dev
+git clone https://github.com/clement-faure/next-antd-graphql-starter.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Install dependencies
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```bash
+cd next-antd-graphql-starter && yarn install
+```
 
-## Learn More
+Run it
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+yarn run dev
+```
+
+## Developer Resources
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Deploy on Vercel : [https://nextjs.org/docs/deployment](https://nextjs.org/docs/deployment)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Authors
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Clément Faure ([@clement-faure](https://www.clement-faure.fr/))
