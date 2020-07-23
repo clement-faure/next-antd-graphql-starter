@@ -1,13 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { withTranslation } from "~/lib/i18n";
+import { withTranslation } from '~/lib/i18n';
 
 const Error = ({ statusCode, t }) => (
   <p>
     {statusCode
-      ? t("error-with-status", { statusCode })
-      : t("error-without-status")}
+      ? t('error-with-status', { statusCode })
+      : t('error-without-status')}
   </p>
 );
 
@@ -19,7 +19,7 @@ Error.getInitialProps = async ({ res, err }) => {
     ({ statusCode } = err);
   }
   return {
-    namespacesRequired: ["common"],
+    namespacesRequired: ['common'],
     statusCode,
   };
 };
@@ -33,4 +33,4 @@ Error.propTypes = {
   t: PropTypes.func.isRequired,
 };
 
-export default withTranslation("common")(Error);
+export default withTranslation('common')(Error);
