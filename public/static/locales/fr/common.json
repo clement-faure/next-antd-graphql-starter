@@ -5,5 +5,8 @@
   "index": {
     "head_title": "Accueil"
   },
+  "users": {
+    "head_title": "Utilisateurs"
+  },
   "footer": "Next Antd Graphql Starter"
 }

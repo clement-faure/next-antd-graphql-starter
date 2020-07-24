@@ -1,13 +1,25 @@
 import { gql } from 'apollo-server-micro';
 
 const typeDefs = gql`
+  ### Queries
+
   type Query {
     users: [User!]!
-    user(username: String): User
+    user(input: UserInput!): User
   }
+
+  ### Types
+
   type User {
-    name: String
+    id: String
     username: String
+    email: String
+  }
+
+  ### Inputs
+
+  input UserInput {
+    username: String!
   }
 `;
 

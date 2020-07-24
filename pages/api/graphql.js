@@ -1,6 +1,9 @@
 import { ApolloServer } from 'apollo-server-micro';
 
-import schema from '~/api/graphql/schema';
+import schema from '~/api/schema';
+
+import runMiddleware from '~/api/middlewares/runMiddleware';
+import initDb from '~/api/middlewares/initDb';
 
 export const config = {
   api: {
@@ -8,6 +11,15 @@ export const config = {
   },
 };
 
-export default new ApolloServer({ schema }).createHandler({
-  path: '/api/graphql',
-});
+async function handler(req, res) {
+  // Run middleware to init database connection
+  await runMiddleware(req, res, initDb);
+
+  return new ApolloServer({
+    schema,
+  }).createHandler({
+    path: '/api/graphql',
+  })(req, res);
+}
+
+export default handler;

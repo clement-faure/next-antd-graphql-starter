@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import App from 'next/app';
 
 import { Layout } from 'antd';
 import { ApolloProvider } from '@apollo/client';
@@ -33,12 +32,7 @@ function MyApp({ Component, pageProps }) {
 MyApp.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   pageProps: PropTypes.object.isRequired,
-  Component: PropTypes.node.isRequired,
-};
-
-MyApp.getInitialProps = async (appContext) => {
-  const appProps = await App.getInitialProps(appContext);
-  return { ...appProps };
+  Component: PropTypes.elementType.isRequired,
 };
 
 export default appWithTranslation(MyApp);
