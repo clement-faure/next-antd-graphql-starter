@@ -27,6 +27,8 @@ const UsersPage = ({ t }) => (
     </Content>
   </>
 );
+
+/*
 export async function getStaticProps() {
   const apolloClient = await initializeApollo();
 
@@ -41,6 +43,11 @@ export async function getStaticProps() {
     unstable_revalidate: 1,
   };
 }
+*/
+
+UsersPage.getInitialProps = async () => ({
+  namespacesRequired: ['common'],
+});
 
 UsersPage.propTypes = {
   t: PropTypes.func.isRequired,
