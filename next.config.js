@@ -37,6 +37,7 @@ const extendRuntimeConfig = (nextConfig = {}) => ({
   publicRuntimeConfig: {
     // Will be available on both server and client
     appName: 'NagStarter',
+    graphqlUri: process.env.GRAPHQL_URI,
     localeSubpaths,
   },
 });
