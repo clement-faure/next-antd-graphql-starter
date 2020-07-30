@@ -9,7 +9,7 @@
     "start": "next start",
     "start-static": "serve ./out",
     "analyze-bundle": "cross-env ANALYZE=true npm run build",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 -s ./public",
     "build-storybook": "build-storybook",
     "start-storybook-static": "serve storybook-static",
     "start-test": "cross-env NODE_ENV=test node server",
