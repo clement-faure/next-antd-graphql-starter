@@ -2,7 +2,7 @@
 
 Next Antd GraphQL Starter is a simple environment for building modern JAMstack application.
 
-[https://next-antd-graphql-starter.vercel.app/fr](https://next-antd-graphql-starter.vercel.app/fr)
+[https://next-antd-graphql-starter.vercel.app](https://next-antd-graphql-starter.vercel.app)
 
 This starter is build on top of
 
@@ -42,6 +42,7 @@ yarn run dev
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 - Deploy on Vercel : [https://nextjs.org/docs/deployment](https://nextjs.org/docs/deployment)
+- [Next.js with apollo](https://github.com/vercel/next.js/tree/canary/examples/with-apollo/) - Next.js with apollo example
 
 ## Authors
 

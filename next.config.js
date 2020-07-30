@@ -37,17 +37,14 @@ const extendRuntimeConfig = (nextConfig = {}) => ({
   publicRuntimeConfig: {
     // Will be available on both server and client
     appName: 'NagStarter',
+    graphqlUri: process.env.GRAPHQL_URI,
     localeSubpaths,
   },
 });
 
-const extendExperimentalConfig = (nextConfig = {}) => ({
+const extendRewrites = (nextConfig = {}) => ({
   ...nextConfig,
-  experimental: {
-    async rewrites() {
-      return [...nextI18NextRewrites(localeSubpaths)];
-    },
-  },
+  rewrites: async () => nextI18NextRewrites(localeSubpaths),
 });
 
 const extendWebpackConfig = (nextConfig = {}) => {
@@ -109,7 +106,7 @@ module.exports = (nextConfig = {}) => {
   return flowRight([
     extendWebpackConfig,
     extendRuntimeConfig,
-    extendExperimentalConfig,
+    extendRewrites,
     extendGlobalConfig,
   ])(nextConfig);
 };
