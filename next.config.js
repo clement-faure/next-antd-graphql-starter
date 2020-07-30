@@ -42,13 +42,9 @@ const extendRuntimeConfig = (nextConfig = {}) => ({
   },
 });
 
-const extendExperimentalConfig = (nextConfig = {}) => ({
+const extendRewrites = (nextConfig = {}) => ({
   ...nextConfig,
-  experimental: {
-    async rewrites() {
-      return [...nextI18NextRewrites(localeSubpaths)];
-    },
-  },
+  rewrites: async () => nextI18NextRewrites(localeSubpaths),
 });
 
 const extendWebpackConfig = (nextConfig = {}) => {
@@ -110,7 +106,7 @@ module.exports = (nextConfig = {}) => {
   return flowRight([
     extendWebpackConfig,
     extendRuntimeConfig,
-    extendExperimentalConfig,
+    extendRewrites,
     extendGlobalConfig,
   ])(nextConfig);
 };

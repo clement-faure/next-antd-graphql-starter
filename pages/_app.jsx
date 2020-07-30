@@ -1,4 +1,5 @@
 import React from 'react';
+import App from 'next/app';
 import PropTypes from 'prop-types';
 
 import { Layout } from 'antd';
@@ -28,6 +29,11 @@ function MyApp({ Component, pageProps }) {
     </ApolloProvider>
   );
 }
+
+MyApp.getInitialProps = async (appContext) => {
+  const appProps = await App.getInitialProps(appContext);
+  return { ...appProps };
+};
 
 MyApp.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
