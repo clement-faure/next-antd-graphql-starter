@@ -14,7 +14,6 @@ export const config = {
 
 // Initializing the cors middleware
 const cors = Cors({
-  origin: false, // Allow all origins
   methods: ['POST', 'OPTIONS'], // Allow only post and options methods
 });
 
