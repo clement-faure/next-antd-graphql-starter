@@ -43,6 +43,7 @@ yarn run dev
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 - Deploy on Vercel : [https://nextjs.org/docs/deployment](https://nextjs.org/docs/deployment)
 - [Next.js with apollo](https://github.com/vercel/next.js/tree/canary/examples/with-apollo/) - Next.js with apollo example
+- [Next.js with Ant Design](https://github.com/vercel/next.js/tree/canary/examples/with-ant-design) - Next.js with Ant Design (using css)
 
 ## Issues to follow
 
