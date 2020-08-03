@@ -1,3 +1,5 @@
+/* We are using mainly css modules to optimize pages/components (only required css is loaded)*/
+
 .height-100vh {
   height: 100vh;
 }

@@ -1,4 +1,5 @@
 import { ApolloServer } from 'apollo-server-micro';
+import Cors from 'cors';
 
 import schema from '~/api/schema';
 
@@ -11,7 +12,16 @@ export const config = {
   },
 };
 
+// Initializing the cors middleware
+const cors = Cors({
+  origin: false, // Allow all origins
+  methods: ['POST'], // Allow only post method
+});
+
 async function handler(req, res) {
+  // Run the middleware to init cors
+  await runMiddleware(req, res, cors);
+
   // Run middleware to init database connection
   await runMiddleware(req, res, initDb);
 
