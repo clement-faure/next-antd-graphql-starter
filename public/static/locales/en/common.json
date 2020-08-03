@@ -8,5 +8,13 @@
   "users": {
     "head_title": "Users"
   },
+  "users_no_ssr": {
+    "head_title": "Users - No SSR"
+  },
+  "header": {
+    "home_menu_item": "Home",
+    "users_menu_item": "Users",
+    "users_no_ssr_menu_item": "Users (No SSR)"
+  },
   "footer": "Next Antd Graphql Starter"
 }

@@ -1,4 +1,3 @@
-// .babelrc or babel-loader option
 {
   "presets": ["next/babel"],
   "plugins": [
@@ -6,8 +5,18 @@
       "import",
       {
         "libraryName": "antd",
-        "style": true
+        "libraryDirectory": "lib",
+        "style": "index.css"
       }
-    ] // `style: true` for less or `style: css` for css
+    ],
+    [
+      "import",
+      {
+        "libraryName": "@ant-design/icons",
+        "libraryDirectory": "lib/icons",
+        "camel2DashComponentName": false
+      },
+      "@ant-design/icons"
+    ]
   ]
 }
