@@ -16,6 +16,7 @@ import NagsHeader from '~/components/layout/NagsHeader';
 import NagsFooter from '~/components/layout/NagsFooter';
 
 function MyApp({ Component, pageProps }) {
+  // Initialize apollo client and populate cache with pageProps
   const apolloClient = useApollo(pageProps.initialApolloState);
 
   return (

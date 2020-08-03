@@ -44,6 +44,10 @@ yarn run dev
 - Deploy on Vercel : [https://nextjs.org/docs/deployment](https://nextjs.org/docs/deployment)
 - [Next.js with apollo](https://github.com/vercel/next.js/tree/canary/examples/with-apollo/) - Next.js with apollo example
 
+## Issues to follow
+
+- https://github.com/isaachinman/next-i18next/issues/652 - Support for getServerSideProps on next-i18next package
+
 ## Authors
 
 - Clément Faure ([@clement-faure](https://www.clement-faure.fr/))
