@@ -49,6 +49,10 @@ yarn run dev
 
 - https://github.com/isaachinman/next-i18next/issues/652 - Support for getServerSideProps on next-i18next package
 
+## Other cool Next stuff
+
+- [Vulcan Next Starter](https://github.com/VulcanJS/vulcan-next-starter)
+
 ## Authors
 
 - Clément Faure ([@clement-faure](https://www.clement-faure.fr/))
