@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import getConfig from 'next/config';
 
-import { Layout, Button, DatePicker } from 'antd';
+import { Layout, Button } from 'antd';
 
 import { i18n, withTranslation } from '~/lib/i18n';
 
@@ -29,7 +29,6 @@ const Homepage = ({ t }) => (
         >
           {t('change-locale')}
         </Button>
-        <DatePicker />
       </div>
     </Content>
   </>

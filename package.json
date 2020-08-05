@@ -24,8 +24,8 @@
     "start": "Runs production build on a local server configured by server.js"
   },
   "dependencies": {
-    "@ant-design/icons": "^4.2.1",
-    "@apollo/client": "^3.1.1",
+    "@ant-design/icons": "^4.2.2",
+    "@apollo/client": "^3.1.2",
     "@zeit/next-less": "^1.0.1",
     "antd": "^4.5.2",
     "apollo-server-micro": "^2.16.1",
@@ -37,14 +37,14 @@
     "lodash": "^4.17.19",
     "mongoose": "^5.9.27",
     "next": "^9.5.1",
-    "next-i18next": "^6.0.1",
+    "next-i18next": "^6.0.2",
     "null-loader": "^4.0.0",
     "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.5",
+    "@babel/core": "^7.11.1",
     "@next/bundle-analyzer": "^9.5.1",
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-links": "^5.3.19",
