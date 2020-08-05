@@ -4,11 +4,9 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import getConfig from 'next/config';
 
-import { Layout, Button } from 'antd';
+import { Layout, Button, DatePicker } from 'antd';
 
 import { i18n, withTranslation } from '~/lib/i18n';
-
-import DatePicker from '~/components/ui/DatePicker';
 
 const {
   publicRuntimeConfig: { appName },
@@ -24,6 +22,7 @@ const Homepage = ({ t }) => (
     <Content className="padding-50">
       <div>
         <Button
+          type="primary"
           onClick={() => {
             i18n.changeLanguage(i18n.language === 'en' ? 'fr' : 'en');
           }}

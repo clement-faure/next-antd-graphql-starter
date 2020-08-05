@@ -2,13 +2,11 @@ import React from 'react';
 import App from 'next/app';
 import PropTypes from 'prop-types';
 
-// Import global style
-import 'antd/dist/antd.css';
-import '~/styles/vars.css';
-import '~/styles/global.css';
-
 import { Layout } from 'antd';
 import { ApolloProvider } from '@apollo/client';
+
+// Import global style
+import '~/styles/global.less';
 
 // Lib
 import { useApollo } from '~/lib/apolloClient';
