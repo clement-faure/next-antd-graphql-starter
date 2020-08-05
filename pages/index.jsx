@@ -8,8 +8,6 @@ import { Layout, Button } from 'antd';
 
 import { i18n, withTranslation } from '~/lib/i18n';
 
-import DatePicker from '~/components/ui/DatePicker';
-
 const {
   publicRuntimeConfig: { appName },
 } = getConfig();
@@ -24,13 +22,13 @@ const Homepage = ({ t }) => (
     <Content className="padding-50">
       <div>
         <Button
+          type="primary"
           onClick={() => {
             i18n.changeLanguage(i18n.language === 'en' ? 'fr' : 'en');
           }}
         >
           {t('change-locale')}
         </Button>
-        <DatePicker />
       </div>
     </Content>
   </>
