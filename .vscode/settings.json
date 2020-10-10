@@ -1,0 +1,13 @@
+{
+  "search.exclude": {
+    "**/.next": true,
+    "yarn.lock": true
+  },
+  "files.exclude": {
+    "yarn.lock": true,
+    "**/.next": true,
+    "**/public/vendors": true
+  },
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true
+}

@@ -1,7 +1,8 @@
 import { ApolloServer } from 'apollo-server-micro';
 import Cors from 'cors';
 
-import schema from '~/api/schema';
+import typeDefs from '~/api/type-defs';
+import resolvers from '~/api/resolvers';
 
 import runMiddleware from '~/api/middlewares/runMiddleware';
 import initDb from '~/api/middlewares/initDb';
@@ -25,7 +26,8 @@ async function handler(req, res) {
   await runMiddleware(req, res, initDb);
 
   return new ApolloServer({
-    schema,
+    typeDefs,
+    resolvers,
   }).createHandler({
     path: '/api/graphql',
   })(req, res);
