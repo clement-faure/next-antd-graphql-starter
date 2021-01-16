@@ -9,7 +9,8 @@ import { Layout } from 'antd';
 import { withTranslation } from '~/lib/i18n';
 import { initializeApollo } from '~/lib/apolloClient';
 
-import UsersContainer, { USERS_QUERY } from '~/views/users/UsersContainer';
+import UsersContainer from '~/views/users/UsersContainer';
+import { USERS_QUERY } from '~/services/UsersService';
 
 const {
   publicRuntimeConfig: { appName },

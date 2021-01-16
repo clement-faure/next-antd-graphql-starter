@@ -1,18 +1,9 @@
 import React from 'react';
-import { gql, useQuery } from '@apollo/client';
 
-export const USERS_QUERY = gql`
-  query getUsers {
-    users {
-      id
-      email
-      username
-    }
-  }
-`;
+import { useUserQuery } from '~/services/UsersService';
 
 const UsersContainer = () => {
-  const { loading, error, data } = useQuery(USERS_QUERY, {
+  const { loading, error, data } = useUserQuery({
     // Setting this value to true will make the component rerender when
     // the "networkStatus" changes, so we are able to know if it is fetching
     // more data
