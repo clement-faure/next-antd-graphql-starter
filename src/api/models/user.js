@@ -6,7 +6,7 @@ const { ObjectId } = Schema;
 const UserSchema = new Schema(
   {
     _id: ObjectId,
-    username: String,
+    name: String,
     email: String,
     workspaces: [ObjectId],
     active_workspace: ObjectId,
