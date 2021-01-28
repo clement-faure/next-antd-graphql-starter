@@ -2,26 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Head from 'next/head';
-import getConfig from 'next/config';
 
 import { Layout } from 'antd';
 
 import { withTranslation } from '~/lib/i18n';
-import { initializeApollo } from '~/lib/apolloClient';
+import { initializeApollo } from '~/lib/apollo';
 
 import UsersContainer from '~/views/users/UsersContainer';
 import { USERS_QUERY } from '~/services/UsersService';
-
-const {
-  publicRuntimeConfig: { appName },
-} = getConfig();
 
 const { Content } = Layout;
 
 const UsersPage = ({ t }) => (
   <>
     <Head>
-      <title>{`${appName} - ${t('users.head_title')}`}</title>
+      <title>{`${t('app_name')} - ${t('users.head_title')}`}</title>
     </Head>
     <Content className="padding-50">
       <UsersContainer />
