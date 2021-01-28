@@ -9,7 +9,7 @@ import { ApolloProvider } from '@apollo/client';
 import '~/styles/global.less';
 
 // Lib
-import { useApollo } from '~/lib/apolloClient';
+import { useApollo } from '~/lib/apollo';
 import { appWithTranslation } from '~/lib/i18n';
 
 import NagsHeader from '~/components/layout/NagsHeader';
