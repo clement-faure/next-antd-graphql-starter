@@ -7,7 +7,7 @@ const path = require('path');
 const { nextI18NextRewrites } = require('next-i18next/rewrites');
 
 const packageJSON = require('./package.json');
-const { localeSubpaths } = require('./src/lib/i18n/config');
+const { localeSubpaths } = require('./src/lib/i18n/config.ts');
 
 const flowRight = require('lodash/fp/flowRight');
 
@@ -21,11 +21,6 @@ const themeVariables = lessToJS(
 if (process.env.ANALYZE === 'true') {
   console.log('Enabling Webpack bundle analyzer');
 }
-
-const extendGlobalConfig = (nextConfig = {}) => ({
-  ...nextConfig,
-  pageExtensions: ['js', 'jsx'],
-});
 
 const extendRuntimeConfig = (nextConfig = {}) => ({
   ...nextConfig,
@@ -104,6 +99,5 @@ module.exports = (nextConfig = {}) => {
     extendRuntimeConfig,
     extendEnv,
     extendRewrites,
-    extendGlobalConfig,
   ])(nextConfig);
 };

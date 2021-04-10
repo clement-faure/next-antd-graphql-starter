@@ -1,5 +1,5 @@
 import React from 'react';
-import App from 'next/app';
+import App, { AppProps } from 'next/app';
 import PropTypes from 'prop-types';
 
 import { Layout } from 'antd';
@@ -15,7 +15,7 @@ import { appWithTranslation } from '~/lib/i18n';
 import NagsHeader from '~/components/layout/NagsHeader';
 import NagsFooter from '~/components/layout/NagsFooter';
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   // Initialize apollo client and populate cache with pageProps
   const apolloClient = useApollo(pageProps.initialApolloState);
 
