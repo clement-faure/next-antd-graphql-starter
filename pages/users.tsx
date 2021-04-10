@@ -1,11 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
 import Head from 'next/head';
 
 import { Layout } from 'antd';
 
-import { withTranslation } from '~/lib/i18n';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
 import { initializeApollo } from '~/lib/apollo';
 
 import UsersContainer from '~/views/users/UsersContainer';
@@ -13,22 +12,21 @@ import { USERS_QUERY } from '~/services/UsersService';
 
 const { Content } = Layout;
 
-const UsersPage = ({ t }) => (
-  <>
-    <Head>
-      <title>{`${t('app_name')} - ${t('users.head_title')}`}</title>
-    </Head>
-    <Content className="padding-50">
-      <UsersContainer />
-    </Content>
-  </>
-);
+const UsersPage = () => {
+  const { t } = useTranslation();
+  return (
+    <>
+      <Head>
+        <title>{`${t('app_name')} - ${t('users.head_title')}`}</title>
+      </Head>
+      <Content className="padding-50">
+        <UsersContainer />
+      </Content>
+    </>
+  );
+};
 
-// We should use new next.js data fetching methods such as getStaticProps, getServerSideProps.
-// Unfortunately, next-i18next do not support yet integration using theses methods
-// https://github.com/isaachinman/next-i18next/issues/652
-
-UsersPage.getInitialProps = async () => {
+export async function getServerSideProps({ locale }) {
   const apolloClient = await initializeApollo();
 
   // Fetching users in server side
@@ -37,13 +35,11 @@ UsersPage.getInitialProps = async () => {
   });
 
   return {
-    namespacesRequired: ['common'],
-    initialApolloState: apolloClient.cache.extract(),
+    props: {
+      initialApolloState: apolloClient.cache.extract(),
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
   };
-};
+}
 
-UsersPage.propTypes = {
-  t: PropTypes.func.isRequired,
-};
-
-export default withTranslation('common')(UsersPage);
+export default UsersPage;

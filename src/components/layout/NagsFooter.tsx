@@ -1,13 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { Layout } from 'antd';
 
-import { withTranslation } from '~/lib/i18n';
+import { useTranslation } from 'next-i18next';
 
 const { Footer } = Layout;
 
-const NagsFooter = ({ t }) => {
+const NagsFooter = () => {
+  const { t } = useTranslation();
   return (
     <Footer className="text-align-center">
       {t('footer')}
@@ -17,8 +17,4 @@ const NagsFooter = ({ t }) => {
   );
 };
 
-NagsFooter.propTypes = {
-  t: PropTypes.func.isRequired,
-};
-
-export default withTranslation(['common'])(NagsFooter);
+export default NagsFooter;

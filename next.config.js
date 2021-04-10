@@ -1,15 +1,14 @@
 /* eslint-disable */
-const withLess = require('@zeit/next-less');
-const lessToJS = require('less-vars-to-js');
 const fs = require('fs');
 const path = require('path');
 
-const { nextI18NextRewrites } = require('next-i18next/rewrites');
-
-const packageJSON = require('./package.json');
-const { localeSubpaths } = require('./src/lib/i18n/config.ts');
+const withLess = require('@zeit/next-less');
+const lessToJS = require('less-vars-to-js');
 
 const flowRight = require('lodash/fp/flowRight');
+
+const { i18n } = require('./next-i18next.config');
+const packageJSON = require('./package.json');
 
 const themeVariables = lessToJS(
   fs.readFileSync(
@@ -22,15 +21,9 @@ if (process.env.ANALYZE === 'true') {
   console.log('Enabling Webpack bundle analyzer');
 }
 
-const extendRuntimeConfig = (nextConfig = {}) => ({
+const extendI18n = (nextConfig = {}) => ({
   ...nextConfig,
-  serverRuntimeConfig: {
-    // Will only be available on the server side
-  },
-  publicRuntimeConfig: {
-    // Will be available on both server and client
-    localeSubpaths,
-  },
+  i18n,
 });
 
 const extendEnv = (nextConfig = {}) => {
@@ -43,11 +36,6 @@ const extendEnv = (nextConfig = {}) => {
     },
   };
 };
-
-const extendRewrites = (nextConfig = {}) => ({
-  ...nextConfig,
-  rewrites: async () => nextI18NextRewrites(localeSubpaths),
-});
 
 const extendWebpackConfig = (nextConfig = {}) => {
   let newNextConfig = withLess({
@@ -94,10 +82,5 @@ const extendWebpackConfig = (nextConfig = {}) => {
 };
 
 module.exports = (nextConfig = {}) => {
-  return flowRight([
-    extendWebpackConfig,
-    extendRuntimeConfig,
-    extendEnv,
-    extendRewrites,
-  ])(nextConfig);
+  return flowRight([extendWebpackConfig, extendEnv, extendI18n])(nextConfig);
 };

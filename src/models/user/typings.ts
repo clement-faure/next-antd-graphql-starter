@@ -1,6 +1,4 @@
-import PropTypes from 'prop-types';
-
-export const UserPropType = PropTypes.shape({
-  id: PropTypes.string,
-  name: PropTypes.string,
-});
+export type User = {
+  id: string;
+  name: string;
+};

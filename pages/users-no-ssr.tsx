@@ -1,33 +1,28 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
 import Head from 'next/head';
 
 import { Layout } from 'antd';
 
-import { withTranslation } from '~/lib/i18n';
+import { useTranslation } from 'next-i18next';
+import { i18nGetStaticProps } from '~/lib/i18n/server';
 
 import UsersContainer from '~/views/users/UsersContainer';
 
 const { Content } = Layout;
 
-const UsersNoSSRPage = ({ t }) => (
-  <>
-    <Head>
-      <title>{`${t('app_name')} - ${t('users_no_ssr.head_title')}`}</title>
-    </Head>
-    <Content className="padding-50">
-      <UsersContainer />
-    </Content>
-  </>
-);
-
-UsersNoSSRPage.getInitialProps = async () => ({
-  namespacesRequired: ['common'],
-});
-
-UsersNoSSRPage.propTypes = {
-  t: PropTypes.func.isRequired,
+const UsersNoSSRPage = () => {
+  const { t } = useTranslation();
+  return (
+    <>
+      <Head>
+        <title>{`${t('app_name')} - ${t('users_no_ssr.head_title')}`}</title>
+      </Head>
+      <Content className="padding-50">
+        <UsersContainer />
+      </Content>
+    </>
+  );
 };
 
-export default withTranslation('common')(UsersNoSSRPage);
+export const getStaticProps = i18nGetStaticProps(['common']);
+
+export default UsersNoSSRPage;

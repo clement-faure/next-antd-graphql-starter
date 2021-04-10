@@ -1,7 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
-import { UserPropType } from '~/models/user';
 
 const UsersList = ({ users }) => (
   <ul>
@@ -10,9 +7,5 @@ const UsersList = ({ users }) => (
     ))}
   </ul>
 );
-
-UsersList.propTypes = {
-  users: PropTypes.arrayOf(UserPropType).isRequired,
-};
 
 export default UsersList;

@@ -1,17 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 
 import { Layout, Menu } from 'antd';
 
-import { withTranslation, Router } from '~/lib/i18n';
+import { useTranslation } from 'next-i18next';
 
 const { Header } = Layout;
 
-const NagsHeader = ({ t }) => {
+const NagsHeader = () => {
+  const { t } = useTranslation();
   const router = useRouter();
 
-  const handleMenuClick = (e) => Router.push(e.key);
+  const handleMenuClick = (e) => router.push(e.key);
 
   return (
     <Header>
@@ -32,8 +32,4 @@ const NagsHeader = ({ t }) => {
   );
 };
 
-NagsHeader.propTypes = {
-  t: PropTypes.func.isRequired,
-};
-
-export default withTranslation(['common'])(NagsHeader);
+export default NagsHeader;
