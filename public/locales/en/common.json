@@ -1,6 +1,6 @@
 {
   "app_name": "NagStarter",
-  "change-locale": "Change locale",
+  "welcome": "Welcome",
   "error-with-status": "A {{statusCode}} error occurred on server",
   "error-without-status": "An error occurred on the server",
   "index": {

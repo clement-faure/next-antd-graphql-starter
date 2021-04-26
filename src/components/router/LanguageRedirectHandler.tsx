@@ -15,6 +15,8 @@ export const LanguageRedirectHandler = ({
   useEffect(() => {
     const _locale = computeBrowserLocale();
 
+    // Maybe the user does not want to be redirected on browser main locale all the time
+    // We could be smarter and store main user language in database
     if (!!_locale && _locale !== router.locale) {
       router.push(router.pathname, router.asPath, {
         locale: _locale,

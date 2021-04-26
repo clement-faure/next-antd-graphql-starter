@@ -1,8 +1,6 @@
 import Head from 'next/head';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
 
-import { Layout, Button } from 'antd';
+import { Layout } from 'antd';
 
 import { useTranslation } from 'next-i18next';
 import { i18nGetStaticProps } from '~/lib/i18n/server';
@@ -11,7 +9,6 @@ const { Content } = Layout;
 
 const Homepage = () => {
   const { t } = useTranslation();
-  const router = useRouter();
 
   return (
     <>
@@ -20,9 +17,7 @@ const Homepage = () => {
       </Head>
       <Content className="padding-50">
         <div>
-          <Link href="/" locale={router.locale === 'en' ? 'fr' : 'en'}>
-            <Button type="primary">{t('change-locale')}</Button>
-          </Link>
+          <p>{t('welcome')}</p>
         </div>
       </Content>
     </>
