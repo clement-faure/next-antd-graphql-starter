@@ -7,15 +7,11 @@ import { Layout, Button } from 'antd';
 import { useTranslation } from 'next-i18next';
 import { i18nGetStaticProps } from '~/lib/i18n/server';
 
-import useBrowserLanguageRedirect from '~/lib/hooks/useBrowserLanguageRedirect';
-
 const { Content } = Layout;
 
 const Homepage = () => {
   const { t } = useTranslation();
   const router = useRouter();
-
-  useBrowserLanguageRedirect();
 
   return (
     <>
