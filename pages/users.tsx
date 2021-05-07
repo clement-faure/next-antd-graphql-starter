@@ -5,7 +5,7 @@ import { Layout } from 'antd';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import { initializeApollo } from '~/lib/apollo';
+import { initializeApollo, addApolloState } from '~/lib/apollo';
 
 import UsersContainer from '~/views/users/UsersContainer';
 import { USERS_QUERY } from '~/services/UsersService';
@@ -34,12 +34,11 @@ export async function getServerSideProps({ locale }) {
     query: USERS_QUERY,
   });
 
-  return {
+  return addApolloState(apolloClient, {
     props: {
-      initialApolloState: apolloClient.cache.extract(),
       ...(await serverSideTranslations(locale, ['common'])),
     },
-  };
+  });
 }
 
 export default UsersPage;

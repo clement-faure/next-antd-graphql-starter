@@ -14,18 +14,22 @@ import { useApollo } from '~/lib/apollo';
 import NagsHeader from '~/components/layout/NagsHeader';
 import NagsFooter from '~/components/layout/NagsFooter';
 
+import LanguageRedirectHandler from '~/components/router/LanguageRedirectHandler';
+
 function MyApp({ Component, pageProps }: AppProps) {
   // Initialize apollo client and populate cache with pageProps
-  const apolloClient = useApollo(pageProps.initialApolloState);
+  const apolloClient = useApollo(pageProps);
 
   return (
     <ApolloProvider client={apolloClient}>
-      <Layout className="height-100vh">
-        <NagsHeader />
-        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-        <Component {...pageProps} />
-        <NagsFooter />
-      </Layout>
+      <LanguageRedirectHandler>
+        <Layout className="height-100vh">
+          <NagsHeader />
+          {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+          <Component {...pageProps} />
+          <NagsFooter />
+        </Layout>
+      </LanguageRedirectHandler>
     </ApolloProvider>
   );
 }
